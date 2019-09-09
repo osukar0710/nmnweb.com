@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>メールフォーム</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/favicon.ico"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/rs_styles.css" media="screen and (min-width:897px)">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div class="overlay" id="overLay">
+        <div class="modal_menu">
+            <ul class="modal_menu_list">
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="">NMNとは？</a></li>
+                <li><a href="">商品を購入</a></li>
+                <li><a href="">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="menu" id="menu">
+            <a id="menuTrigger" class="menu-trigger" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <header>
+            <nav id="nav">
+                <div class="logo">
+                    <a href="#">
+                        <img src="../img/logo.png" alt="nmnweb.comロゴ">
+                        <!-- <img src="img/logo1.png" alt="ステアフーズロゴ"> -->
+                    </a>
+                </div>
+                <div class="global_nav_menu">
+                    <ul class="gmenu_list">
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="#productDescription">商品説明</a></li>
+                        <li><a>NMN商品購入</a></li>
+                        <li><a>お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="form_head_wrap">
+                <div class="head_title">
+                    <h1 class="head_title-h1">お問い合わせフォーム</h1>
+                </div>
+                <div class="form_info_wrap">
+                    <ul class="step">
+                        <li class="is_current">入力フォーム</li>
+                        <li>確認画面</li>
+                        <li>完了</li>
+                    </ul>
+                </div>
+                <div class="form_top_msg">
+                    <p>必要事項ご記入の上送信ボタンをクリックしてください。</p>
+                </div>
+            </div>
+            <form action="" method="POST" class="form">
+                <table class="form_table">
+                    <tbody>
+                        <tr>
+                            <th><span class="label_required-red label_required-text">必須</span><label for="name">お名前</label></th>
+                            <td><input class="input" type="text" name="name" placeholder="山田 太郎"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="label_required-red label_required-text">必須</span><label for="email">メールアドレス</label></th>
+                            <td><input class="input" type="email" name="email"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="label_any-blue label_required-text">任意</span><label for="tel">電話番号</label></th>
+                            <td><input class="input" type="text"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="label_required-red label_required-text">必須</span><label for="text">お問い合わせ内容</label></th>
+                            <td><textarea name="content" id="" cols="30" rows="5"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="submit_wrap">
+                                        <div class="checkbox_btn_wrap">
+                                            <input type="checkbox" class="checkbox_btn">
+                                            <p>上記内容に問題がないならチェックを入れて送信してください。</p>
+                                        </div>
+                                        <input class="input_submit_btn" type="submit" value="上記の内容で送信する">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </main>s
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

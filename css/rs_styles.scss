@@ -1,0 +1,115 @@
+// タブブレット•PC向け
+
+/***********************************************
+*                      共通                     *
+************************************************/ 
+/*---------------- カラー色変数管理 ----------------*/
+//アクセントカラー変数
+$pointColor: rgb(243, 187, 191);
+//テキストアンダーライン
+$markerYellow: rgb(245, 242, 88);
+//トップ画面文字色
+$topMsgColor: rgb(59, 53, 53);
+// section_innerバックカラー
+$bgColor: #f6f6f6;
+//ボタン文字色
+$btnFontColor: #fff;
+$btnFontColor2: rgba(40,26,23,.6);
+$btnFontColor3: rgb(253, 91, 102);
+//nav文字色
+// $navColor: rgb(253, 91, 102);
+$navColor: rgb(230, 161, 165);
+/*--------------- カラー色変数管理 end ---------------*/
+.menu {
+    display: none;
+}
+// 商品画像 スマホ用とPC用表示切り替え
+.sp {
+    display: none;
+}
+.pc {
+    display: block;
+}
+.overlay {
+    display: none;
+}
+.global_nav_menu {
+    display: block;
+    .gmenu_list {
+        li {
+            a {
+                transition: .5s;
+                &:hover {
+                    color: #fff;
+                    background-color: #{$pointColor};
+                }
+            }
+        }
+    }
+}
+/**********************************************
+*                    ヘッダー                    *
+************************************************/ 
+header {
+    nav {
+        height: 84px;
+        .global_nav_menu{
+            .gmenu_list {
+                display: flex;
+                justify-content: flex-start;
+                // padding: 0 5px;
+                li {
+                    padding-top: 5px;
+                    a {
+                        color: #{$navColor};
+                        font-family: 'Crimson Text', serif;
+                        margin: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/***********************************************
+*                    メイン                     *
+************************************************/ 
+section {
+    .sec_inner {
+        background-color: #{$bgColor};
+        .img_inner {
+            width: 55%;
+            .img_inner {
+                height: 100%;
+            }
+        }
+
+        .sec_text {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            width: 45%;
+        }
+        .sec_msg {
+            width: 100%;
+        }
+    }
+    .row_elem {
+        display:flex;
+        flex-direction: row;
+    }
+    .reverse_elem {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .btn {
+        margin-top: 30px;
+    }
+}
+
+
+
+/***********************************************
+*                                          *
+************************************************/ 

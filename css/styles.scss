@@ -1,0 +1,574 @@
+/***********************************************
+*                      共通                     *
+************************************************/ 
+/*---------------- カラー色変数管理 ----------------*/
+//アクセントカラー変数
+$pointColor: rgb(243, 187, 191);
+//テキストアンダーライン
+$markerYellow: rgb(245, 242, 88);
+//トップ画面文字色
+$topMsgColor: rgb(59, 53, 53);
+// $topMsgColor: #fff;
+// section_innerバックカラー
+$bgColor: #f6f6f6;
+// $bgColor: #f5f5f5;
+$btnFontColor: #fff;
+$btnFontColor2: rgba(40,26,23,.6);
+$btnFontColor3: rgb(253, 91, 102);
+//nav文字色
+$navColor: rgb(253, 91, 102);
+/*--------------- カラー色変数管理 end ---------------*/
+//全体
+html,body {
+    height: 100%;
+    font-size: 24px;
+}
+* {
+    box-sizing: border-box;
+    // margin: 0px;
+    // padding: 0px;
+}
+a {
+    text-decoration: none;
+}
+body {
+    color: rgba(40,26,23,.6);
+}
+ul {
+    list-style: none; 
+}
+.container {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.text_bold {
+    // font-size: 24px;
+    font-weight: bold;
+}
+/* ------------ ボタンデザイン ------------ */
+.btn {
+    border: solid 2px #{$navColor};
+    cursor: pointer;
+    padding: 20px 10px;
+    transition:all .5s ease;
+}
+
+//ボタン＿大きさ
+.btn_size {
+    width: 300px;
+}
+// ボタン＿背景色•文字色
+.btn_color {
+    background-color: rgba(214, 202, 202, .3);
+    color: #{$btnFontColor};
+    &:hover {
+        background-color: rgba(255,255,255,1);
+        color: #949090; 
+        font-size: 24px;
+        a {
+            &:visited, &:link {
+                color: #949090;
+            }
+        }
+    }
+}
+.btn_color_pink {
+    &:hover {
+        background-color: rgb(250, 162, 167);
+        color: #fff;
+        a {
+            &:visited, &:link {
+                color: #fff;
+            }
+        }
+    }
+    a {
+        color: rgb(253, 91, 102);
+    }
+}
+.btn_action {
+    animation: aaa;
+
+    @keyframes aaa {
+        
+    }
+}
+/* ------------ 画像デザイン ------------ */
+.sec_img {
+    height: auto;
+    width: auto;
+    max-width:100%;
+    max-height:100%;
+}
+// スマホ用モーダルオーバーレイ
+.overlay {
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: .5s;
+    z-index: 5;
+    .modal_menu {
+        color: #fff;
+    }
+    //モーダルメニュー
+    .modal_menu {
+        .modal_menu_list {
+            padding: 30px 40px;
+            width: 80%;
+            li {
+                margin-bottom: 20px;
+                a {
+                    transition: .8s;
+                    &:visited, &:link {
+                        color: #fff;
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        color:#000;
+                    }
+                }
+            }
+
+        }
+    }
+}
+//ハンバーガーメニュー
+.menu {
+    position: fixed;
+    right: 0;
+    z-index: 10;
+
+    .menu-trigger,
+    .menu-trigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+    // background-color: #{$pointColor};
+    }
+    .menu-trigger {
+        position: relative;
+        width: 84px;
+        height: 84px;
+        display: flex;
+    }
+    .menu-trigger span {
+        // background-color: rgb(124, 121, 123);
+        background-color: rgb(216, 48, 84);
+        border-radius: 4px;
+        height: 2px;
+        width: 44px;
+        position: absolute;
+        left: 0;
+        margin: 0 20px;
+    }
+    .menu-trigger span:nth-of-type(1) {
+    top:25px;
+    }
+    .menu-trigger span:nth-of-type(2) {
+    top: 40px;
+    }
+    .menu-trigger span:nth-of-type(3) {
+    bottom: 26px;
+    }
+    .menu-trigger.active span:nth-of-type(1) {
+        transform: translateY(15px) rotate(-315deg);
+    }
+    .menu-trigger.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .menu-trigger.active span:nth-of-type(3) {
+        transform: translateY(-15px) rotate(315deg);
+    }
+}
+
+
+/* ------------ スマホ用とPC用表示切り替え ------------ */
+//nmn商品画像
+.pc {
+    display: none;
+}
+.sp {
+    display: block;
+}
+//ナビメニュー
+.global_nav_menu{
+    display: none;
+}
+
+/***********************************************
+*        スクロールに合わせて画像や本文を表示         *
+************************************************/ 
+//下から
+.elem_fadeIn_up {
+    opacity : 0;
+    transform: translateY(20px);
+    transition: all 1s;
+  }
+  
+  .elem_fadeIn_slideLeft {
+    opacity : 0;
+    transform: translateX(-30px);
+    transition: all 1s;
+  }
+  .elem_fadeIn_slideRight {
+    opacity : 0;
+    transform: translateX(30px);
+    transition: all 1s;
+  }
+/***********************************************
+*                   ヘッダー画面                   *
+************************************************/ 
+header {
+    width: 100%;
+    nav {
+        height: 84px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1024px;
+        // padding: 0 40px 0 38px;
+        padding: 0 10px;
+        opacity: .9;
+        width: 100%;
+        position: fixed;
+        // transition: .2s; モーダル開閉時のopacityの動き難
+        z-index: 6;
+        .logo{ 
+            padding: 10px 0;
+            img {
+                height: 64px;
+                width: 70px;
+            }
+        }
+
+    }
+    .top_wrap {
+        height: 100vh;
+        min-height: 400px;
+        background: url(../img/top_oldgroup4.jpg) no-repeat;
+        background-position: center top;
+        background-size: auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .top_msg_wrap {
+            text-align: center;
+            position: absolute;
+            top: 20Vh;
+            .top_title {
+                color: #{$topMsgColor};
+                font-family: 'Crimson Text', serif;
+                background: url(../img/back_text_color.jpg);//背景色
+                background-size: cover;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;//くり抜いた部分を背景色
+                opacity: .9;
+                padding:2px;
+                font-size: 2rem;
+                width: 100%;
+            }
+            .top_msg {
+                color: #000000;
+                font-family: 'Crimson Text', serif;
+                margin-top: 50px;
+
+            }
+        }
+        button {
+            font-size: 24px;
+            position: absolute;
+            bottom: 30px;
+            a {
+                &:visited, &link {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+/***********************************************
+*                   メイン画面                   *
+************************************************/ 
+main {
+    section {
+        // height: 400px;
+        padding: 40px 24px 20px;
+        margin-bottom: 20px;
+
+        //section見出し
+        .sec_head {
+            font-size: 18px;
+            line-height: 2.4em;
+            text-align: center;
+        }
+        //section本文
+        .sec_text {
+            font-style: normal;
+            font-size: 16px;
+            letter-spacing: 2px;
+            line-height: 2.3em;
+            // white-space: pre-wrap;
+        }
+        .img_inner {
+            height: 100%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            a {
+                &:visited, &link {
+                    color: #fff;
+                }
+            }
+        }
+        .btn_wrap {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .btn {
+                margin-top: 50px;
+            }
+            .btn_color {
+                a {
+                    &:visited, &link {
+                        color: #{$btnFontColor3};
+                    }
+                }
+            }
+        }
+        //アンダーライン、文字色
+        .under_marker{
+            background: linear-gradient(transparent 60%, #{$markerYellow} 0%);
+        }
+        .bold_color {
+            color: rgb(238, 79, 79);
+        }
+
+        .company_table_wrap {
+            //会社概要テーブル
+            table{
+                border-collapse:collapse;
+                margin:0 auto;
+                tr {
+                    th {
+                        width: 140px;
+                    }
+                    td,th{
+                        border-top:1px solid #666;
+                        padding:10px;
+                        text-align: left;
+                    }
+                }
+                tr:last-child td,
+                tr:last-child th{
+                    border-bottom:1px solid #666;  
+                }
+            }
+        }
+    }
+}
+/***********************************************
+*                    フッター                   *
+************************************************/ 
+footer {
+    // background: #dfe1e1; 修正20190808
+    background: #{$pointColor};
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    text-align: center;
+}
+/***********************************************
+*                メールフォーム用                 *
+************************************************/ 
+.form_head_wrap {
+
+    height: 360px;
+    // headerにfixed適用のため少し余白ができる。
+    // 上部にheader分のpaddingで改善
+    padding: 84px 0 0;
+    width: 100%;
+    .head_title {
+        // display: none;
+        // background-color: rgb(233, 77, 38);
+        background-color: #{$pointColor};
+        padding: 10px 0;
+        width: 100%;
+        .head_title-h1 {
+            color: #fff;
+            // color: #{$pointColor};
+            font-size: 1rem;
+        }
+    }
+    .form_info_wrap {
+        // margin-top: 30px;
+        display: none;
+        margin: 0 auto;
+        max-width:786px; 
+        .step {
+            list-style-type: none;
+            display:table;
+            width:100%;
+            min-width: 480px;
+            padding:0;
+            margin:0;
+            overflow:hidden;
+            li {
+                display:table-cell;
+                position:relative;
+                background: #504944;
+                padding: 1em 0.5em 1em 2em;
+                color: #fff;
+                width: 30%;
+                &:last-child {
+                    padding-right: 1em;
+                    &::before, &::after {
+                        display:none;
+                    }
+                }
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    margin: auto;
+                }
+                &::before {
+                    top:-3px;
+                    right:-1em;
+                    border-style: solid;
+                    border-color: transparent transparent transparent #fff;
+                    border-width: 40px 0 40px 1em;
+                    z-index: 10; 
+                }
+                &::after {
+                    top:-3px;
+                    right:-.8em;
+                    border-style: solid;
+                    border-color: transparent transparent transparent #504944;
+                    border-width: 40px 0 40px 1em;
+                    z-index: 10;
+                }
+            }
+            li.is_current {
+                background: #9bbb30;
+                font-weight: bold;
+                &::after {
+                    border-color: transparent transparent transparent #9bbb30;
+                }
+            }
+        }
+    }
+    .form_top_msg {
+        text-align: center;
+    }
+}
+.form {
+    width: 100%;
+}
+.form_table {
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+    tbody {
+        width: 100%;
+        max-width: 480px;
+    }
+    tr {
+        border: 1px solid rgb(167, 161, 161);
+        // border-bottom: 0px; 
+        display: flex;
+        flex-direction: column;
+        font-size: .6rem;
+        width: 100%;
+        //モバイルフォーム border重なり解除
+        &:not(:last-child) {
+            border-bottom: 0px;
+        }
+        // padding: 10px 20px;
+        th {
+            background-color: #eeeeee;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 48px;
+            width: 100%;
+            padding: 8px 0;
+
+            //必須アイコン
+            .label_required-red {
+                background-color: #{$btnFontColor3};
+                border-radius: 3px;
+                margin-left: 20px;
+                padding:5px;
+            }
+            //任意アイコン
+            .label_any-blue {
+                background-color: rgb(88, 191, 231);
+                border-radius: 3px;
+                margin-left: 20px;
+                padding:5px;
+            }
+            .label_required-text {
+                color: #fff;
+            }
+            label {
+                margin-left: 5px;
+            }
+        }
+        td {
+            padding: 10px 20px;
+            margin: 0 auto;
+            width: 100%;
+            .input, textarea {
+                line-height: 48px;
+                width: 100%;
+            }
+            .input {
+                border-radius: 3px;
+                height: 36px;
+            }
+            textarea {
+                border-radius: 3px;
+                resize: none;
+            }
+            .submit_wrap {
+                display: flex;
+                flex-direction: column;
+                .checkbox_btn_wrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content:flex-start;
+                    height: 48px;
+                    padding: 0 10px;
+                    .checkbox_btn {
+                       height: 100%;
+                       margin-right: 10px;
+                       transform: scale(1.5);
+                    }
+                }
+                .input_submit_btn {
+                    background-color: #{$navColor};
+                    color: #fff;
+                    cursor: pointer;
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    transition: 1s;
+                    &:hover {
+                        background-color: #fff;
+                        color: #{$navColor};
+                    }
+                }
+            }
+
+        }
+    }
+}
