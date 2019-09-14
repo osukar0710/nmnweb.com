@@ -3,7 +3,7 @@ suteafoods　商品販売ページ
 
 # 使用したスキル
 - HTML
-- CSS
+- CSS/SCSS
 - jQuery
 - Photoshop 画像加工
 - Illsutrator ファビコンと商品ロゴマーク表示の作成
